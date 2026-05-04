@@ -104,7 +104,7 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--color-bg)), url('/Users/akieiamoniquedavis/.gemini/antigravity/brain/7ee8cded-87db-46b6-a4c2-76374b1ad6e4/artifacts/media__1777897690119.jpg') center/cover;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--color-bg)), url('assets/mens_tracksuit.jpg') center/cover;
     padding: 0 2rem;
     position: relative;
 }
