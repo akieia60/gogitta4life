@@ -302,3 +302,33 @@ footer {
     .hero h1 { font-size: 4rem; }
     .nav-links { display: none; }
 }
+
+/* Color Selector Styles */
+.color-selector {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+.color-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    padding: 0;
+}
+.color-btn:hover {
+    transform: scale(1.2);
+}
+.color-btn.active {
+    border-color: var(--color-gold);
+    transform: scale(1.1);
+    box-shadow: 0 0 8px var(--color-gold);
+}
+.product-image img {
+    transition: filter 0.5s ease-in-out;
+}
