@@ -4,433 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoGitta4Life | Premium Streetwear</title>
+    <meta name="description" content="GoGitta4Life — Premium streetwear. Exclusive drops. Shop sweatsuits, shirts, hoodies, and hats.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
     <link rel="apple-touch-icon" href="assets/logo.jpg">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#050505">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <img src="assets/logo.jpg" alt="GoGitta4Life Logo" class="nav-logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop Apparel</a></li>
-                <li><a href="#about">About the Brand</a></li>
+            <a href="#home" class="logo"><img src="assets/logo.jpg" alt="GoGitta4Life Logo" class="nav-logo"></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#shop" data-cat="all">Shop All</a></li>
+                <li><a href="#shop" data-cat="sweatsuits">Sweatsuits</a></li>
+                <li><a href="#shop" data-cat="shirts">Shirts</a></li>
+                <li><a href="#shop" data-cat="hoodies">Hoodies</a></li>
+                <li><a href="#shop" data-cat="hats">Hats</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-btn">Cart (0)</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="cart-btn" id="cart-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
             </div>
         </div>
     </nav>
-
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <a href="#shop" data-cat="all" class="mobile-nav-link">Shop All</a>
+            <a href="#shop" data-cat="sweatsuits" class="mobile-nav-link">Sweatsuits</a>
+            <a href="#shop" data-cat="shirts" class="mobile-nav-link">Shirts</a>
+            <a href="#shop" data-cat="hoodies" class="mobile-nav-link">Hoodies</a>
+            <a href="#shop" data-cat="hats" class="mobile-nav-link">Hats</a>
+        </div>
+    </div>
     <header id="home" class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
+            <div class="hero-badge">PREMIUM STREETWEAR</div>
             <h1>GO GITTA<br><span class="accent-gold">4 LIFE</span></h1>
-            <p>Premium streetwear. Exclusive drops. The next generation of Go Gitta Records apparel.</p>
+            <p>Exclusive drops. Fashion-forward design. Built for the grind.</p>
             <a href="#shop" class="cta-btn">Shop the Collection</a>
         </div>
     </header>
-
     <main id="shop">
-        <section class="collection-section">
-            <div class="section-header">
-                <h2>LATEST <span class="accent-green">DROPS</span></h2>
-                <p>Fashion-forward apparel featuring our signature black and gold aesthetic.</p>
-            </div>
-            
-            <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-product="mens_tracksuit">
-                    <div class="product-image">
-                        <img src="assets/mens_tracksuit.png" alt="Men's Tracksuit">
-                    </div>
-                    <div class="product-info">
-                        <h3>Signature Men's Tracksuit</h3>
-                        <p class="price">$120.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card" data-product="womens_pink">
-                    <div class="product-image">
-                        <img src="assets/womens_pink.png" alt="Women's Pink Set">
-                    </div>
-                    <div class="product-info">
-                        <h3>Women's Rose Gold Set</h3>
-                        <p class="price">$110.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card" data-product="mens_hoodie">
-                    <div class="product-image">
-                        <img src="assets/mens_hoodie.png" alt="Men's Hoodie Set">
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Hoodie Set</h3>
-                        <p class="price">$130.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card" data-product="womens_cropped">
-                    <div class="product-image">
-                        <img src="assets/womens_cropped.png" alt="Women's Cropped Set">
-                    </div>
-                    <div class="product-info">
-                        <h3>Women's Cropped Jogger Set</h3>
-                        <p class="price">$115.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
+        <section class="shop-section">
+            <div class="shop-header">
+                <h2>THE <span class="accent-green">COLLECTION</span></h2>
+                <div class="category-tabs" id="category-tabs">
+                    <button class="cat-tab active" data-cat="all">All</button>
+                    <button class="cat-tab" data-cat="sweatsuits">Sweatsuits</button>
+                    <button class="cat-tab" data-cat="shirts">Shirts</button>
+                    <button class="cat-tab" data-cat="hoodies">Hoodies</button>
+                    <button class="cat-tab" data-cat="hats">Hats</button>
                 </div>
             </div>
+            <div class="product-grid" id="product-grid"></div>
         </section>
-        
-        <section class="collection-section dark-alt">
-            <div class="section-header">
-                <h2>THE <span class="accent-green">ESSENTIALS</span></h2>
-            </div>
-            
-            <div class="product-grid">
-                <div class="product-card" data-product="green_jogger">
-                    <div class="product-image">
-                        <img src="assets/green_jogger.png" alt="Men's Emerald Jogger">
-                    </div>
-                    <div class="product-info">
-                        <h3>Emerald Accent Pullover</h3>
-                        <p class="price">$85.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="neon_zip">
-                    <div class="product-image">
-                        <img src="assets/neon_zip.png" alt="Women's Neon Jogger">
-                    </div>
-                    <div class="product-info">
-                        <h3>Neon Zip Tracksuit</h3>
-                        <p class="price">$90.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="tshirt">
-                    <div class="product-image">
-                        <img src="assets/tshirt.png" alt="Premium T-Shirt">
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium GoGitta Tee</h3>
-                        <p class="price">$35.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="hats">
-                    <div class="product-image">
-                        <img src="assets/hats.png" alt="Headwear Collection">
-                    </div>
-                    <div class="product-info">
-                        <h3>Signature Headwear</h3>
-                        <p class="price">$25.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="collection-section">
-            <div class="section-header">
-                <h2>SUMMER <span class="accent-green">COLLECTION</span></h2>
-                <p>Hot weather pieces — dresses, shorts, and skirts in the GoGitta colorway.</p>
-            </div>
-            <div class="product-grid">
-                <div class="product-card" data-product="summer_dress">
-                    <div class="product-image">
-                        <img src="assets/summer_dress.png" alt="Women's Summer Dress">
-                    </div>
-                    <div class="product-info">
-                        <h3>GoGitta Summer Dress</h3>
-                        <p class="price">$75.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="skirt">
-                    <div class="product-image">
-                        <img src="assets/skirt.png" alt="Women's Mini Skirt Set">
-                    </div>
-                    <div class="product-info">
-                        <h3>Mini Skirt Set</h3>
-                        <p class="price">$55.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="booty_shorts">
-                    <div class="product-image">
-                        <img src="assets/booty_shorts.png" alt="Women's Athletic Shorts Set">
-                    </div>
-                    <div class="product-info">
-                        <h3>Athletic Shorts Set</h3>
-                        <p class="price">$40.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="mens_shorts">
-                    <div class="product-image">
-                        <img src="assets/mens_shorts.png" alt="Men's Distressed Sweat Shorts">
-                    </div>
-                    <div class="product-info">
-                        <h3>Distressed Sweat Shorts</h3>
-                        <p class="price">$50.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="collection-section">
-            <div class="section-header">
-                <h2>LUXURY <span class="accent-green">MONOGRAM</span></h2>
-                <p>The GG signature line. Hand-iced chrome &amp; emerald monogram on premium silhouettes.</p>
-            </div>
-            <div class="product-grid">
-                <div class="product-card" data-product="mono_tote">
-                    <div class="product-image">
-                        <img src="assets/mono_tote.png" alt="GG Monogram Tote Bag">
-                    </div>
-                    <div class="product-info">
-                        <h3>GG Monogram Tote</h3>
-                        <p class="price">$250.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="mono_puffer">
-                    <div class="product-image">
-                        <img src="assets/mono_puffer.png" alt="GG Monogram Long Puffer Coat">
-                    </div>
-                    <div class="product-info">
-                        <h3>Monogram Long Puffer</h3>
-                        <p class="price">$350.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="mono_belt">
-                    <div class="product-image">
-                        <img src="assets/mono_belt.png" alt="GG Monogram Belt">
-                    </div>
-                    <div class="product-info">
-                        <h3>GG Buckle Belt</h3>
-                        <p class="price">$120.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="mono_bucket">
-                    <div class="product-image">
-                        <img src="assets/mono_bucket.png" alt="GG Monogram Bucket Hat">
-                    </div>
-                    <div class="product-info">
-                        <h3>Monogram Bucket Hat</h3>
-                        <p class="price">$80.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card" data-product="mono_crossbody">
-                    <div class="product-image">
-                        <img src="assets/mono_crossbody.png" alt="GG Monogram Crossbody Bag">
-                    </div>
-                    <div class="product-info">
-                        <h3>Monogram Crossbody</h3>
-                        <p class="price">$180.00</p>
-                        <div class="color-selector">
-                            <button class="color-btn active" style="--c1: #050505; --c2: #00ff66;" data-color="default"></button>
-                            <button class="color-btn" style="--c1: #ffffff; --c2: #dddddd;" data-color="white"></button>
-                            <button class="color-btn" style="--c1: #ff0000; --c2: #cc0000;" data-color="red"></button>
-                            <button class="color-btn" style="--c1: #0000ff; --c2: #0000cc;" data-color="blue"></button>
-                            <button class="color-btn" style="--c1: #ffc0cb; --c2: #ff99aa;" data-color="pink"></button>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="collection-section dark-alt">
-            <div class="section-header">
+        <section class="designs-section">
+            <div class="shop-header">
                 <h2>DESIGNS <span class="accent-green">CATALOG</span></h2>
-                <p>Every wordmark, ready to drop on your favorite piece. 17 prints, chrome &amp; emerald.</p>
+                <p class="section-sub">17 signature prints — chrome &amp; emerald.</p>
             </div>
             <div class="prints-grid">
-                <div class="print-card"><img src="assets/prints/1_colored.png" alt="Carolina / Go Gitta script"></div>
+                <div class="print-card"><img src="assets/prints/1_colored.png" alt="Print 1"></div>
                 <div class="print-card"><img src="assets/prints/2_colored.png" alt="Print 2"></div>
                 <div class="print-card"><img src="assets/prints/3_colored.png" alt="Print 3"></div>
                 <div class="print-card"><img src="assets/prints/4_colored.png" alt="Print 4"></div>
-                <div class="print-card"><img src="assets/prints/5_colored.png" alt="GO GITTA RECORDS shield"></div>
+                <div class="print-card"><img src="assets/prints/5_colored.png" alt="Print 5"></div>
                 <div class="print-card"><img src="assets/prints/6_colored.png" alt="Print 6"></div>
                 <div class="print-card"><img src="assets/prints/7_colored.png" alt="Print 7"></div>
                 <div class="print-card"><img src="assets/prints/8_colored.png" alt="Print 8"></div>
                 <div class="print-card"><img src="assets/prints/9_colored.png" alt="Print 9"></div>
                 <div class="print-card"><img src="assets/prints/10_colored.png" alt="Print 10"></div>
-                <div class="print-card"><img src="assets/prints/11_colored.png" alt="TRAPPIN' CASH grid"></div>
+                <div class="print-card"><img src="assets/prints/11_colored.png" alt="Print 11"></div>
                 <div class="print-card"><img src="assets/prints/12_colored.png" alt="Print 12"></div>
                 <div class="print-card"><img src="assets/prints/13_colored.png" alt="Print 13"></div>
                 <div class="print-card"><img src="assets/prints/14_colored.png" alt="Print 14"></div>
                 <div class="print-card"><img src="assets/prints/15_colored.png" alt="Print 15"></div>
                 <div class="print-card"><img src="assets/prints/16_colored.png" alt="Print 16"></div>
-                <div class="print-card"><img src="assets/prints/17_colored.png" alt="GOG ITTA EVER GETHA / 4 LIFE"></div>
+                <div class="print-card"><img src="assets/prints/17_colored.png" alt="Print 17"></div>
             </div>
         </section>
     </main>
-
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header"><h3>YOUR BAG</h3><button class="cart-close" id="cart-close">&times;</button></div>
+        <div class="cart-items" id="cart-items"><p class="cart-empty">Your bag is empty</p></div>
+        <div class="cart-footer" id="cart-footer" style="display:none;">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+    </aside>
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="product-modal" id="product-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-body">
+            <div class="modal-image"><img id="modal-img" src="" alt=""></div>
+            <div class="modal-info">
+                <div class="modal-badge" id="modal-badge"></div>
+                <h2 id="modal-name"></h2>
+                <p class="modal-price" id="modal-price"></p>
+                <label class="modal-label">Color</label>
+                <div class="modal-colors" id="modal-colors"></div>
+                <label class="modal-label">Size</label>
+                <div class="size-selector" id="modal-sizes"></div>
+                <button class="modal-add-btn" id="modal-add-btn">Add to Bag</button>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-content">
             <img src="assets/logo.jpg" alt="Logo" class="footer-logo">
             <p>GoGitta4Life. Built for the grind.</p>
-            <div class="socials">
-                <span>Instagram</span>
-                <span>Twitter</span>
-                <span>Facebook</span>
-            </div>
+            <div class="socials"><a href="#">Instagram</a><a href="#">Twitter</a><a href="#">Facebook</a></div>
         </div>
         <p class="copyright">&copy; 2026 GoGitta4Life Apparel. All rights reserved.</p>
     </footer>
-    <script>
-        const VARIANT_COLORS = ['white', 'red', 'blue', 'pink'];
-
-        document.querySelectorAll('.product-card[data-product]').forEach(card => {
-            const img = card.querySelector('.product-image img');
-            const product = card.dataset.product;
-            if (!img || !product) return;
-            const defaultSrc = img.getAttribute('src');
-
-            VARIANT_COLORS.forEach(c => { new Image().src = `assets/${product}_${c}.png`; });
-
-            const btns = card.querySelectorAll('.color-btn');
-            btns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const color = btn.dataset.color;
-                    img.src = color === 'default' ? defaultSrc : `assets/${product}_${color}.png`;
-                });
-            });
-        });
-    </script>
+    <div class="success-banner" id="success-banner" style="display:none;">
+        <span>✅ Order placed! You'll receive a confirmation email shortly.</span>
+        <button onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
