@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoGitta4Life | Premium Streetwear</title>
     <meta name="description" content="GoGitta4Life — Premium streetwear. Exclusive drops. Shop sweatsuits, shirts, hoodies, and hats.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=pdp2">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
     <link rel="apple-touch-icon" href="assets/logo.jpg">
@@ -75,23 +75,47 @@
             <button class="checkout-btn" id="checkout-btn">Checkout</button>
         </div>
     </aside>
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="product-modal" id="product-modal">
-        <button class="modal-close" id="modal-close">&times;</button>
-        <div class="modal-body">
-            <div class="modal-image"><img id="modal-img" src="" alt=""></div>
-            <div class="modal-info">
-                <div class="modal-badge" id="modal-badge"></div>
-                <h2 id="modal-name"></h2>
-                <p class="modal-price" id="modal-price"></p>
-                <label class="modal-label">Color</label>
-                <div class="modal-colors" id="modal-colors"></div>
-                <label class="modal-label">Size</label>
-                <div class="size-selector" id="modal-sizes"></div>
-                <button class="modal-add-btn" id="modal-add-btn">Add to Bag</button>
+    <section class="pdp" id="pdp" aria-hidden="true">
+        <div class="pdp-inner">
+            <nav class="pdp-crumbs"><a href="#shop" id="pdp-back">&larr; Shop</a><span>/</span><span id="pdp-crumb-cat"></span><span>/</span><span id="pdp-crumb-name"></span></nav>
+            <div class="pdp-main">
+                <div class="pdp-gallery">
+                    <div class="pdp-thumbs" id="pdp-thumbs"></div>
+                    <div class="pdp-stage">
+                        <div class="pdp-track" id="pdp-track"></div>
+                        <button class="pdp-arrow prev" id="pdp-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="pdp-arrow next" id="pdp-next" aria-label="Next photo">&#8250;</button>
+                        <div class="pdp-count" id="pdp-count"></div>
+                    </div>
+                </div>
+                <div class="pdp-info">
+                    <div class="pdp-badge" id="pdp-badge"></div>
+                    <h1 id="pdp-name"></h1>
+                    <div class="pdp-price" id="pdp-price"></div>
+                    <div class="pdp-tags"><span>Go Gitta 4 Life Original</span><span>Secure Checkout</span></div>
+                    <div class="pdp-label">Color: <strong id="pdp-color-name"></strong></div>
+                    <div class="pdp-swatches" id="pdp-swatches"></div>
+                    <div class="pdp-label">Size: <strong id="pdp-size-name">Select a size</strong></div>
+                    <div class="pdp-sizes" id="pdp-sizes"></div>
+                    <div class="pdp-buy" id="pdp-buy">
+                        <div class="pdp-qty"><button id="pdp-minus" aria-label="Less">&minus;</button><span id="pdp-qty">1</span><button id="pdp-plus" aria-label="More">+</button></div>
+                        <button class="pdp-add" id="pdp-add">Add to Bag</button>
+                    </div>
+                    <p class="pdp-msg" id="pdp-msg"></p>
+                    <div class="pdp-ship"><strong>Shipping</strong> Standard $5.99 (5&ndash;10 days) &middot; Express $12.99 (2&ndash;4 days)</div>
+                    <details class="pdp-acc" open><summary>Product Details</summary><ul id="pdp-details"></ul></details>
+                    <details class="pdp-acc"><summary>Care</summary><p>Machine wash cold, inside out, with like colors. Tumble dry low. Don&rsquo;t iron directly on the print.</p></details>
+                    <details class="pdp-acc"><summary>Shipping &amp; Checkout</summary><p>Choose Standard ($5.99, 5&ndash;10 days) or Express ($12.99, 2&ndash;4 days) at checkout. US shipping only. Payments are processed securely by Stripe.</p></details>
+                </div>
             </div>
+            <section class="pdp-more">
+                <h2>Complete the <span class="accent-green">Look</span></h2>
+                <div class="pdp-more-grid" id="pdp-more"></div>
+            </section>
         </div>
-    </div>
+        <div class="pdp-sticky" id="pdp-sticky"><div class="pdp-sticky-txt"><strong id="pdp-sticky-name"></strong><span id="pdp-sticky-price"></span></div><button id="pdp-sticky-add">Add to Bag</button></div>
+    </section>
+    <div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button><img id="lightbox-img" alt=""></div>
     <footer>
         <div class="footer-content">
             <img src="assets/logo.jpg" alt="Logo" class="footer-logo">
@@ -104,6 +128,6 @@
         <span>✅ Order placed! You'll receive a confirmation email shortly.</span>
         <button onclick="this.parentElement.style.display='none'">&times;</button>
     </div>
-    <script src="app.js"></script>
+    <script src="app.js?v=pdp2"></script>
 </body>
 </html>
